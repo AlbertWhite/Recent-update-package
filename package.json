@@ -1,0 +1,29 @@
+{
+  "name": "recent-update-package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "recent-update-package": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlbertWhite/Recent-update-package.git"
+  },
+  "author": "Albert Yuebai XU (albert.yuebai@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlbertWhite/Recent-update-package/issues"
+  },
+  "homepage": "https://github.com/AlbertWhite/Recent-update-package#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "fs": "^0.0.1-security",
+    "node-fetch": "^2.3.0",
+    "path": "^0.12.7",
+    "utils": "^0.3.1"
+  }
+}
