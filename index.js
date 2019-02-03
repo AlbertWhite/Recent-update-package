@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /*
   For detecting the latest update of the dependencies in package.json.
 */
@@ -40,11 +41,13 @@ async function getLatestUpdate(dependencies, days) {
   const result = await Promise.all(
     dependencies.map(dependency =>
       callApi(`${url}${dependency}`).then(response => {
-        const createdDate = new Date(response.time.modified)
-        const today = new Date()
-        if (millisecondsToDays(today - createdDate) < days) {
-          console.log(dependency, "is updated on", createdDate)
-          return true
+        if (response && response.time) {
+          const createdDate = new Date(response.time.modified)
+          const today = new Date()
+          if (millisecondsToDays(today - createdDate) < days) {
+            console.log(dependency, "is updated on", createdDate)
+            return true
+          }
         }
         return false
       })
